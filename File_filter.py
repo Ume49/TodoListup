@@ -23,6 +23,13 @@ def search_extension(name="filename.extension"):
 
 # デバッグ用
 if __name__ == "__main__":
-    fn="IReverseCommand.cs.meta"
+    list = [
+        "D:\\E_repos\\Tumi_Dungeon\\詰めダンジョン\\Assets\\Script\\Undo\\ReverseCommand\\IReverseCommand.cs",
+        "D:\\E_repos\\Tumi_Dungeon\\詰めダンジョン\\Assets\\Script\\Undo\\ReverseCommand\\ReverseCommand_Executer.cs.meta",
+        "D:\\E_repos\\Tumi_Dungeon\\詰めダンジョン\\Assets\\Script\\Undo\\ReverseCommand\\ReverseCommand_Executer.cs"
+    ]
 
-    print(search_extension(fn))
+    result = Filter_extension(list, ".cs")
+
+    for w in result:
+        print(w)
