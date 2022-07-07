@@ -23,7 +23,7 @@ def GetFileList_fromRootDirectory( root_directory="" , output_list = []):
     
     # 全部のフォルダに再帰処理
     for w in current_folder_list:
-        GetFileList_fromRootDirectory(os.path.join(root_directory, w))
+        GetFileList_fromRootDirectory(os.path.join(root_directory, w), output_list = output_list)
 
     return
 
@@ -31,3 +31,12 @@ def GetFileList_fromRootDirectory( root_directory="" , output_list = []):
 # デバッグ
 if __name__ == "__main__" :
     dir = "D:\E_repos\Tumi_Dungeon\詰めダンジョン\Assets\Script"
+
+    result = []
+
+    GetFileList_fromRootDirectory(dir, result)
+
+    for w in result:
+        print(w)
+    
+    print(len(result))
