@@ -23,4 +23,8 @@ ttk.Button(
     command = lambda: Tk()
 ).pack(side = LEFT)
 
+# 使用予定
+# list = Search_TODO.SearchString_behindTODO("directory")
+# listには表示すべき文字列リストが返ってくる
+
 root_window.mainloop()
