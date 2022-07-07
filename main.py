@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import filedialog
+from tkinter.simpledialog import askfloat
 
 root_window = Tk()
 
@@ -9,18 +11,17 @@ frame = ttk.Frame(root_window, padding=16).pack()
 
 ttk.Label(
     frame,
-    text    = "根元のディレクトリ"
+    text    = "root"
 ).pack(side = LEFT)
 
-ttk.Entry(
+entry=ttk.Entry(
     frame
 
 ).pack(side = LEFT)
 
 ttk.Button(
     frame,
-    text    = "...",
-    command = lambda: Tk()
+    text    = "..."
 ).pack(side = LEFT)
 
 # 使用予定
