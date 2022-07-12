@@ -1,6 +1,7 @@
 # ウィジェットの配置をまとめたパッケージ
 # ここのクラスを使うときは、インスタンスを生成 → インスタンス.root.pack(オプション) → インスタンス.Member_Pack()の順番で呼んでね
 
+from sys import displayhook
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
@@ -139,17 +140,24 @@ class Ask_file_exstension:
         this.label.pack(anchor="w")
         this.list .pack(anchor="w")
 
+# 実行ボタン
 class Execute_Button:
     def __init__(this, root):
         this.root = Frame(root, pady = 10)
 
         this.button = ttk.Button(
             this.root,
-            text = "実行！"
+            text = "実行！",
+            command = this.Execute
         )
     
     def Member_Pack(this):
         this.button.pack(anchor="e")
+    
+    def Execute(this):
+        import Display
+        list = ["a", "b", "100", "200"]
+        this.extra_window = Display.Display(list)
 
 if __name__ == "__main__":
     t = Tk()
