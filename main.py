@@ -6,18 +6,20 @@ root_window = Tk()
 
 root_window.title("TODO ListUp forUnity")
 
-directory_frame = ttk.Frame(root_window, padding=16).pack(side=BOTTOM)
-option_frame    = ttk.Frame(root_window, padding=16).pack(side=BOTTOM)
+root_window.geometry("400x300")
 
-Widget.Set_AskDirectory(frame = directory_frame)
 
-ttk.Label(
-    option_frame,
-    text="エンコード"
-).pack(side=LEFT)
-ttk.Entry(
-    option_frame,
-).pack(side=LEFT)
+# ウィジェット配置
+
+widgets = []
+
+widgets.append(Widget.Ask_Directory_Form (root_window))
+widgets.append(Widget.Ask_FindTag_Form   (root_window))
+widgets.append(Widget.Ask_file_exstension(root_window))
+widgets.append(Widget.Ask_Encode         (root_window))
+
+for w in widgets:
+    w.Pack()
 
 # 使用予定
 # list = Search_TODO.SearchString_behindTODO("directory")
